@@ -1,9 +1,8 @@
-// filepath: /c:/Users/shubh/OneDrive/Desktop/BE shery/models/db.js
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb+srv://dummyuser:mongodb@cluster0.bydqx.mongodb.net/test', {
+    await mongoose.connect('mongodb+srv://dummyuser:mongodb@cluster0.mongodb.net/test?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
