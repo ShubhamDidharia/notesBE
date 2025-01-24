@@ -1,10 +1,11 @@
+// filepath: /c:/Users/shubh/OneDrive/Desktop/BE shery/models/db.js
 const mongoose = require('mongoose');
+require('dotenv').config(); // Load environment variables from .env file
 
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb+srv://dummyuser:mongodb@cluster0.bydqx.mongodb.net/notes?retryWrites=true&w=majority&appName=Cluster0', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+    await mongoose.connect(process.env.MONGODB_URI, {
+      // Remove deprecated options
     });
     console.log('Connected to MongoDB Atlas');
   } catch (err) {
