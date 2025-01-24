@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs');
 const path=require('path');
 
 const cookieParser = require('cookie-parser');
-const connectDB = require('./models/db');
+
 const PORT = 3000;
 const jwt = require('jsonwebtoken');
 
@@ -16,7 +16,6 @@ const userModel = require('./models/usermodel');
 const postModel = require('./models/posts');
 
 
-connectDB();
 
 // Set EJS as the view engine
 app.set('views', path.join(__dirname, 'views'));
