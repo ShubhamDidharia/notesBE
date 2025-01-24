@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="bg-zinc-900 h-screen w-full p-10">
+    <div class="flex justify-evenly">
+    <a href="/profile" class="bg-clip-text text-transparent text-2xl bg-gradient-to-r from-purple-500 to-red-400">View Profile</a>
+    <a href="/post" class="bg-clip-text text-transparent text-2xl bg-gradient-to-r from-pink-500 to-cyan-400">Create Post</a>
+    </div>
+    <div class="bg-zinc-900 h-screen w-full p-10 flex-wrap flex space-y-4">
+        <% if(posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <div class="bg-zinc-700 p-4 rounded-md m-4 flex-col justify-between h-80 w-72 ">
+                    <div class="flex-col justify-center">
+                        <h1 class="text-white text-2xl tracking-tighter mt-1"><%= post.title %></h1>
+                        <h4 class="text-md text-blue-500 mt-2">By: <%= post.date %></h4>
+                        <p class="text-white text-2xl tracking-tighter mt-3"><%= post.detail %></p>
+                    </div>
+                    <div class="flex justify-between mt-2 ">
+                        <a href="/post/edit/<%= post._id %>" class="bg-gradient-to-r from-purple-400 to-purple-600 text-2xl text-transparent bg-clip-text ">
+                            <i class="ri-file-edit-line"></i>
+                        </a>
+                        <a href="/post/delete/<%= post._id %>"  class="bg-gradient-to-r from-red-400 to-red-600 text-2xl text-transparent bg-clip-text ">
+                            <i class="ri-delete-bin-5-line"></i>
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h1 class="text-2xl text-white">No Posts Found</h1>
+        <% } %>
+    
+
+    </div>
+
+    
+</body>
+</html>

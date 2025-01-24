@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <a href="/post" class="text-yellow-500 text-3xl fixed top-4 right-4"><i class="ri-ball-pen-fill"></i></a>
+    <div class="bg-zinc-900 h-screen w-full p-10 flex flex-col items-center justify-center space-y-4">
+        <h1 class="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">This is Profile of...</h1>
+        <h2 class="text-2xl text-white"><%= user.username %></h2>
+        <h2 class="text-2xl text-white"><%= user.email %></h2>
+        <a href="/logout" class="bg-gradient-to-r from-purple-400 to-red-400 text-2xl text-white py-2 px-4 rounded hover:bg-blue-600">
+            Logout
+        </a>
+    </div>
+    
+</body>
+</html>
