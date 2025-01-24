@@ -4,7 +4,7 @@ const app = express();
 const bcrypt = require('bcryptjs');
 
 
-
+const connectDB = require('./models/db');
 const path=require('path');
 
 const cookieParser = require('cookie-parser');
@@ -16,6 +16,8 @@ const userModel = require('./models/usermodel');
 const postModel = require('./models/posts');
 
 
+// Connect to MongoDB
+connectDB();
 
 // Set EJS as the view engine
 app.set('views', path.join(__dirname, 'views'));
